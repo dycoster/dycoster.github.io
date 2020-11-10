@@ -244,6 +244,7 @@ i {
     .image01 {
         width: 70%;
         align-self: center;
+        margin-top: 0;
     }
 
     .text01 {
@@ -288,5 +289,12 @@ i {
 
     .personal {
         padding-inline-start: 1rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    body {
+        font-size: x-large;
     }
 }

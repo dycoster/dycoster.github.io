@@ -308,7 +308,7 @@ i {
 @media only screen and (max-width:1060px) {
 
     body {
-        font-size: x-large;
+        font-size: larger;
     }
 
     .latestContainer {
@@ -340,6 +340,10 @@ i {
 }
 
 @media only screen and (max-width: 990px) {
+
+    body {
+        font-size: x-large;
+    }
 
     nav {
         display: none;
