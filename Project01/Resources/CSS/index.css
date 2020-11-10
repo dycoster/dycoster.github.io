@@ -102,6 +102,7 @@ header .button:hover, header .button:active {
     color: #FDF1E7;
     border: #753F83 1px solid;
     background-color: #753F83;
+    text-align: center;
 }
 
 .button:hover, .button:active {
@@ -274,6 +275,10 @@ i {
 
     .imgBox {
         display: none;
+    }
+
+    .textBox {
+        justify-content: center;
     }
 
     .archiveContainer {
