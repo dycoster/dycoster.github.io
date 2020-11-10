@@ -60,17 +60,6 @@ li a:hover, button:active {
     color: #753f83;
 }
 
-header .button {
-    color: #2D1832;
-    border: #79C698 1px solid;
-    background-color: #79C698;
-}
-
-header .button:hover, header .button:active {
-    background-color: #2D1832;
-    color: #79C698;
-}
-
 /* TITLE SECTION */
 
 .title {
