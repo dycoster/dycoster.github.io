@@ -289,14 +289,14 @@ i {
     }
 
     .archivePost img {
-        width: fit-content;
+        width: 65%;
         align-self: center;
     }
 
     .archivePost {
-        width: 50%;
+        width: 75%;
         align-self: center;
-        padding: 3rem 6rem 6rem 6rem;
+        padding: 3rem 0rem 6rem 0rem;
     }
 
     .archivePost p {
@@ -308,7 +308,7 @@ i {
 
     .body {
         grid-template-columns: 1fr 1fr;
-        font-size: 18px;
+        font-size: x-large;
     }
 
     .latestContainer {
@@ -331,11 +331,11 @@ i {
     }
 
     #serviceImg {
-        width: 65%;
+        width: 75%;
     }
 
     #latestPost {
-        width: 65%;
+        width: 75%;
     }
 }
 
