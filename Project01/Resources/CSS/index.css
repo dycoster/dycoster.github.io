@@ -308,7 +308,7 @@ i {
 
     .body {
         grid-template-columns: 1fr 1fr;
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .latestContainer {
