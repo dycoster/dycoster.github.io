@@ -1,8 +1,8 @@
-.body {
+body {
     display: grid;
     grid-template-columns: repeat(4 1fr);
-    grid-template-rows: 1fr 3fr 4fr 4fr 2fr;
-    grid-area:
+    grid-template-rows: 0.5fr 3fr 4fr 4fr 1fr;
+    grid-template-areas:
     "hd hd hd hd"
     "title title title title"
     "latest latest latest latest"
@@ -309,7 +309,6 @@ i {
 @media only screen and (max-width:1060px) {
 
     body {
-        grid-template-columns: 1fr 1fr;
         font-size: x-large;
     }
 
@@ -342,10 +341,6 @@ i {
 }
 
 @media only screen and (max-width: 990px) {
-
-    body {
-        grid-template-columns: 1fr;
-    }
 
     nav {
         display: none;
