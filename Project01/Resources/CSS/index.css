@@ -252,7 +252,7 @@ i {
 
 @media only screen and (min-width:1300px) {
 
-    .body {
+    body {
         font-size: 18px;
     }
 
@@ -308,7 +308,7 @@ i {
 }
 @media only screen and (max-width:1060px) {
 
-    .body {
+    body {
         grid-template-columns: 1fr 1fr;
         font-size: x-large;
     }
@@ -345,6 +345,6 @@ i {
 
     .body {
         grid-template-columns: 1fr;
-        font-size: 11px;
+        font-size: xx-large;
     }
 }
