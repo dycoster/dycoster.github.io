@@ -221,6 +221,10 @@ i {
     .listBox {
         width: 20%;
     }
+
+    #quote {
+        margin-bottom: 2rem;
+    }
 }
 @media only screen and (max-width: 1350px) {
 
@@ -310,5 +314,49 @@ i {
 
     body {
         font-size: x-large;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    #subscribe {
+        margin: 0 0 0 3rem;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+
+    .contactContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .text01 {
+        width: 85%;
+    }
+
+    .text02 {
+        width: 85%;
+    }
+
+    #quote {
+        width: 85%;
+        align-self: center;
+    }
+
+    .listBox {
+        width: 90%;
+    }
+
+    .bio {
+        width: 90%;
     }
 }
