@@ -1,3 +1,15 @@
+/* HEADER SECTION */
+
+@import "indexHeader.css";
+
+/* ARCHIVE SECTION */
+
+@import "indexArchive.css";
+
+/* FOOTER SECTION */
+
+@import "indexFooter.css";
+
 body {
     display: grid;
     grid-template-rows: 0.5fr 3fr 4fr 4fr 1fr;
@@ -27,9 +39,6 @@ h2 {
 p {
     color: #2D1832;
 }
-
-/* HEADER SECTION */
-@import "indexHeader.css";
 
 /* TITLE SECTION */
 
@@ -137,14 +146,6 @@ p span {
 #latestButton {
     align-self: center;
 }
-
-/* ARCHIVE SECTION */
-
-@import "indexArchive.css";
-
-/* FOOTER SECTION */
-
-@import "indexFooter.css";
 
 /* RESPONSIVE DESIGN */
 @media only screen and (min-width:1300px) {
