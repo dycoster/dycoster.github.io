@@ -1,0 +1,27 @@
+footer {
+    grid-area: "ft";
+    background-color: #FDF1E7;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contactContainer {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+i {
+    color: #2D1832;
+}
+
+#copy {
+    margin-top: 0;
+}

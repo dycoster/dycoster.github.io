@@ -25,27 +25,32 @@ header {
     align-items: center;
 }
 
-header button {
-    width: 6rem;
-    height: 2rem;
+.button {
+    padding: 0.6rem 2rem;
     border-radius: 5px;
-    text-transform: uppercase;
-    font-family: "Staatliches", "Montserrat", Helvetica, sans-serif;
+    font-family: "Staatliches","Montserrat", Helvetica, sans-serif;
     font-size: 0.7rem;
     letter-spacing: 1.5px;
+    text-decoration-line: none;
     color: #FDF1E7;
     border: #753F83 1px solid;
     background-color: #753F83;
-    margin-right: 3rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
-header button:hover, header button:active {
+.button:hover, .button:active {
     background-color: #FDF1E7;
     color: #753F83;
+    cursor: pointer;
 }
 
 header h1 {
     margin-left: 3rem;
+}
+
+#subscribe {
+    margin: 0 3rem;
 }
 
 /* ARTICLE SECTION */
@@ -72,6 +77,8 @@ section {
     width:40%;
     margin-top: 3rem;
     min-width: 370px;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -85,6 +92,13 @@ figcaption {
     font-weight: 200;
     font-style: italic;
     font-size: smaller;
+}
+
+#quote {
+    font-size: larger;
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 1.5rem;
 }
 
 .text01 {

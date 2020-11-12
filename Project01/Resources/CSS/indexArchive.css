@@ -1,0 +1,39 @@
+.archive {
+    grid-area: "archive";
+    background-color: #79C698;
+}
+
+.archiveContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+}
+
+.archivePost {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: #FDF1E7;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.archive h1 {
+    text-align: center;
+    background-color: #79C698;
+    padding-top: 0.5em;
+    margin: 0;
+}
+
+a.button {
+    width: 90px;
+    align-self: center;
+}
+
+.archivePost h2 {
+    align-self: center;
+    font-family: "Staatliches", "Montserrat", Helvetica, sans-serif;
+    color: #2D1832;
+    white-space: nowrap;
+}
