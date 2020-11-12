@@ -120,7 +120,6 @@ article {
 }
 
 article h1 {
-    font-size: 2rem;
     text-align: center;
     background-color: #FDF1E7;
     padding-top: 0.5em;
@@ -247,5 +246,31 @@ p span {
 
     nav {
         display: none;
+    }
+}
+@media only screen and (max-width: 490px) {
+
+    #serviceImg {
+        width: 100%;
+    }
+
+    #latestPost {
+        width: 85%;
+    }
+
+    .archiveContainer {
+        padding: 0;
+    }
+
+    .archivePost {
+        width: 85%;
+    }
+
+    .archivePost img {
+        width: 85%;
+    }
+
+    .archivePost p {
+        width: 75%;
     }
 }
