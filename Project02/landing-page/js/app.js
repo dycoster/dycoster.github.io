@@ -25,13 +25,6 @@ const sections = document.querySelectorAll("section");
  *
 */
 
-function deactivateSections() {
-    sections.forEach((element)=> {
-    element.classList.remove('your-active-class');
-    });
-};
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -43,42 +36,34 @@ function deactivateSections() {
 function navLinks() {
 	sections.forEach((element)=>{
 	    let listItem = document.createElement("li");
-    	let sectionName = element.getAttribute("data-nav");
+    	let listName = element.getAttribute("data-nav");
     	let currentSectionId = element.getAttribute("id");
-        listItem.innerHTML = `<a href="#${currentSectionId}" class="menu__link">${sectionName}</a>`;
+        listItem.innerHTML = `<a href="#${currentSectionId}" class="menu__link">${listName}</a>`;
         navBarList.appendChild(listItem);
     });
 }
 
 
 // Add class 'active' to section when near top of viewport
-function activeSection() {
-    let sectionNum = section[0];
-    let rectValue = 1000000;
 
-    for (let section of sections) {
-        let rect = section.getBoundingClientRect();
-        if(rect.top>-300 & rect.top<rectValue) {
-            rectValue = rect.top;
-            sectionNum = section;
-        }
-    }
-    return sectionNum;
+const check =(entries) =>
+    entries.forEach(entry => {
+        entry.target.classList.toggle("your-active-class", entry.isIntersecting);
+});
+
+const options = {
+    threshold: 0.7
 };
+
+let observer = new IntersectionObserver(check,options);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+
 // Scroll to anchor ID using scrollTO event
 
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu
-
-navLinks();
-
-// Scroll to section on link click
 function scrollToClick() {
     let menuLinks = document.querySelectorAll('.menu__link');
     menuLinks.forEach((element) => {
@@ -91,13 +76,18 @@ function scrollToClick() {
     });
 }
 
-scrollToClick();
-// Set sections as active
+/**
+ * End Main Functions
+ * Begin Events
+ *
+*/
 
-function addActiveClass() {
-    window.addEventListener('scroll', function() {
-        let _section = activeSection();
-        _section.classlist.add('your-active-class')
-    });
-}
-addActiveClass();
+// Build menu
+
+navLinks();
+
+// Scroll to section on link click
+
+scrollToClick();
+
+// Set sections as active
