@@ -46,17 +46,21 @@ function navLinks() {
 
 // Add class 'active' to section when near top of viewport
 
+// check over intersectionObserverEntries
 const check =(entries) =>
     entries.forEach(entry => {
+// add active class to section when intersecting
         entry.target.classList.toggle("your-active-class", entry.isIntersecting);
 });
 
+// when 75% of section is visible in viewport intersection=true
 const options = {
-    threshold: 0.7
+    threshold: 0.75
 };
 
 let observer = new IntersectionObserver(check,options);
 
+//intersectionObserver loops through sections
 sections.forEach(section => {
     observer.observe(section);
 });
