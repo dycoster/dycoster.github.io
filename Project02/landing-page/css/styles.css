@@ -90,7 +90,6 @@ section {
     transition: ease 0.3s all;
 }
 
-
 /* Header Styles */
 .page__header {
     background: rgba(0,13,60,1);
@@ -99,6 +98,19 @@ section {
     width: 100%;
     height: 52px;
     z-index: 5;
+}
+
+@media only screen and (max-width: 700px) {
+.page__header {
+    height: 208px;
+    position: relative;
+}
+
+#navbar__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 }
 
 /* Footer Styles */
@@ -222,7 +234,13 @@ section.your-active-class .landing__container::after {
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
+		           translate(-1em)
 		           rotate(-360deg);
 	}
+}
+
+.navbar__menu .menu__link:active {
+    color: grey;
+    background-color:rgba(0,13,60,1);
+    transition: ease 0.3s;
 }

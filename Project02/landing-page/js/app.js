@@ -49,7 +49,6 @@ function navLinks() {
 // check over intersectionObserverEntries
 const check =(entries) =>
     entries.forEach(entry => {
-// add active class to section when intersecting
         entry.target.classList.toggle("your-active-class", entry.isIntersecting);
 });
 
