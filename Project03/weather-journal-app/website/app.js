@@ -1,15 +1,25 @@
 /* Global Variables */
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '1fe34768e8f763c73fb8af6f2bf45812';
-const newZip = document.getElementById('zip').value;
-const newFeeling = document.getElementById('feelings').value;
+
+// Create a new date instance dynamically with JS
+let d = new Date();
+let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
 // add eventlistener with callback action
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e) {
+    const newZip = document.getElementById('zip').value;
+    const newFeeling = document.getElementById('feelings').value;
+
 getWeather(baseURL, newZip, apiKey)
+
+.then (function(data) {
+    console.log(data);
+    postData('/add', {date: newDate, temp: data.temperature, feeling: newFeeling})
+});
 }
 
 // Fetch openweatherMap API
@@ -53,9 +63,6 @@ const postData = async (url = '', data = {})=> {
 
 
 
-// Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
 
