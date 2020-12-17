@@ -1,6 +1,4 @@
 /* Global Variables */
-const baseURL = "http://api.openweathermap.org/data/2.5/weather?zip="
-const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
 
 
 // Create a new date instance dynamically with JS
@@ -15,11 +13,13 @@ function performAction(e) {
     const newZip = document.getElementById('zip').value;
     const newFeeling = document.getElementById('feelings').value;
 
-getWeather(baseURL, newZip, apiKey)
+    const baseURL = `http://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=`
+    const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
+
+getWeather(baseURL, apiKey)
 
 .then (function(data) {
-    console.log(data);
-    postData('/add', {date: newDate, temp: data.main.temperature, feeling: newFeeling})
+    postData('/add', {date: newDate, temp: data.main.temp, feeling: newFeeling})
 })
 .then(
     updateUI()
@@ -27,9 +27,9 @@ getWeather(baseURL, newZip, apiKey)
 }
 
 // Fetch openweatherMap API
-const getWeather = async (baseURL, newZip, apiKey) => {
+const getWeather = async (baseURL, apiKey) => {
 
-    const res = await fetch(baseURL+newZip+apiKey);
+    const res = await fetch(baseURL+apiKey);
     try {
 
         const data = await res.json();
@@ -46,18 +46,13 @@ const getWeather = async (baseURL, newZip, apiKey) => {
 const postData = async (url = '', data = {})=> {
     console.log(data);
 
-    const res = await fetch (url, {
+    const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            temp: data.temp,
-            date: data.date,
-            feeling: data.response,
-        }),
-
+        body: JSON.stringify(data)
     });
 
     try {
@@ -75,9 +70,9 @@ const updateUI = async () => {
     const request = await fetch('/all');
     try{
         const allData = await request.json();
-        document.getElementById('date').innerHTML = allData.date;
-        document.getElementById('temp').innerHTML = allData.temp;
-        document.getElementById('content').innerHTML = allData.content;
+        document.getElementById('date').innerHTML = `Date: ${allData[0].date}`;
+        document.getElementById('temp').innerHTML = `Temperature: ${allData[0].temp}`;
+        document.getElementById('content').innerHTML = `Feeling: ${allData[0].content}`;
     }
     catch (error) {
         console.log("error", error);
