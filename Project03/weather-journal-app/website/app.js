@@ -57,7 +57,7 @@ const postData = async (url = '', data = {})=> {
         const newData = await response.json();
         console.log(newData);
         return newData;
-    }catch(error) {
+    }catch (error) {
         console.log("error", error);
     }
 }
@@ -68,9 +68,9 @@ const updateUI = async () => {
     const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
-        document.getElementById('date').innerHTML = `Date: ${allData[0].date}`;
-        document.getElementById('temp').innerHTML = `Temperature: ${allData[0].temp}`;
-        document.getElementById('content').innerHTML = `Feeling: ${allData[0].content}`;
+        document.getElementById('date').innerHTML = allData.date;
+        document.getElementById('temp').innerHTML = allData.temp;
+        document.getElementById('content').innerHTML = allData.content;
     }
     catch (error) {
         console.log("error", error);
