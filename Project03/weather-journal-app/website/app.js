@@ -19,7 +19,7 @@ function performAction(e) {
 getWeather(baseURL, apiKey)
 
 .then (function(data) {
-    postData('/addWeatherData', {date: newDate, temp: data.main.temp, user_response: newFeeling})
+    postData('http://localhost:3030/addWeatherData', {date: newDate, temp: data.main.temp, user_response: newFeeling})
 })
 .then(function() {
     updateUI()
@@ -44,7 +44,7 @@ const getWeather = async (baseURL, apiKey) => {
 // Async POST request
 
 const postData = async (url = '', data = {})=> {
-    const response = await fetch(url, {
+    const response = await fetch (url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -65,7 +65,7 @@ const postData = async (url = '', data = {})=> {
 // Update UI async
 
 const updateUI = async () => {
-    const request = await fetch('/all');
+    const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
         document.getElementById('date').innerHTML = `Date: ${allData[0].date}`;
