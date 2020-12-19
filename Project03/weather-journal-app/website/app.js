@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
+
 
 // Create a new date instance dynamically with JS
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -17,6 +17,7 @@ function performAction(e) {
     const newFeeling = document.getElementById('feelings').value;
 
     const baseURL = `http://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=`
+    const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
 
 getWeather(baseURL, apiKey)
 
@@ -72,9 +73,9 @@ const updateUI = async () => {
         const allData = await request.json();
         const celsius = Math.floor(allData.temperature - 273.15);
 
-        document.getElementById('date').innerHTML = `Date: ${allData.date}`;
-        document.getElementById('name').innerHTML = `Location: ${allData.name}`;
-        document.getElementById('temp').innerHTML = `Temperature: ${celsius}°C`;
+        document.getElementById('date').innerHTML = allData.date;
+        document.getElementById('name').innerHTML = allData.name;
+        document.getElementById('temp').innerHTML = `${celsius}°C`;
         document.getElementById('content').innerHTML = `Feeling: ${allData.user_response}`;
         console.log(allData)
     }

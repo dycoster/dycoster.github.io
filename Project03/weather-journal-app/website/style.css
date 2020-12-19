@@ -12,9 +12,10 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "header header"
-    "column-left column-right"
     "result result"
-    "result result";
+    "result result"
+    "column-left column-right"
+    "footer footer";
     height:100vh;
     background: linear-gradient(#83C9EE, white);
     color: #1B4F6B;
@@ -66,10 +67,12 @@ body{
 
 .zip {
     grid-area: column-left;
+    margin-bottom: 2rem;
 }
 
 .feel {
     grid-area: column-right;
+    margin-bottom: 2rem;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -121,6 +124,13 @@ textarea{
     font-family: 'Oswald', sans-serif;
     border: none;
 }
+
+footer {
+    grid-area: footer;
+    font-size: 12px;
+    text-align: end;
+    color:#1B4F6B;
+}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -145,4 +155,22 @@ button:focus {
     color: #1B4F6B;
     font-family: 'Oswald', sans-serif;
 
+}
+
+@media only screen and (max-width: 700px) {
+    #app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "column-left"
+    "column-right"
+    "result"
+    "result";
+    }
+
+    .holder {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 }
