@@ -1,9 +1,12 @@
 /* Global Variables */
-
+const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
 
 // Create a new date instance dynamically with JS
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 let d = new Date();
-let newDate = d.getDate()+'.'+ d.getMonth()+'.'+ d.getFullYear();
+let newDate = d.getDate()+' '+ monthNames[d.getMonth()]+' '+ d.getFullYear();
 
 
 // add eventlistener with callback action
@@ -14,7 +17,6 @@ function performAction(e) {
     const newFeeling = document.getElementById('feelings').value;
 
     const baseURL = `http://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=`
-    const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
 
 getWeather(baseURL, apiKey)
 
@@ -68,10 +70,12 @@ const updateUI = async () => {
     const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
-        document.getElementById('name').innerHTML = allData.name
-        document.getElementById('date').innerHTML = allData.date;
-        document.getElementById('temp').innerHTML = allData.temperature;
-        document.getElementById('content').innerHTML = allData.user_response;
+        const celsius = Math.floor(allData.temperature - 273.15);
+
+        document.getElementById('name').innerHTML = `Location: ${allData.name}`;
+        document.getElementById('date').innerHTML = `Date: ${allData.date}`;
+        document.getElementById('temp').innerHTML = `Temperature: ${celsius}°C`;
+        document.getElementById('content').innerHTML = `Feeling: ${allData.user_response}`;
         console.log(allData)
     }
     catch (error) {
