@@ -19,9 +19,9 @@ function performAction(e) {
 getWeather(baseURL, apiKey)
 
 .then (function(data) {
-    postData('http://localhost:3030/addWeatherData', {date: newDate, temp: data.main.temp, user_response: newFeeling})
+    postData('http://localhost:3030/add', {name: data.name, temperature: data.main.temp, date: newDate, user_response: newFeeling})
 })
-.then(function() {
+.then(function(newData) {
     updateUI()
 })
 }
@@ -68,9 +68,11 @@ const updateUI = async () => {
     const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
+        document.getElementById('name').innerHTML = allData.name
         document.getElementById('date').innerHTML = allData.date;
-        document.getElementById('temp').innerHTML = allData.temp;
-        document.getElementById('content').innerHTML = allData.content;
+        document.getElementById('temp').innerHTML = allData.temperature;
+        document.getElementById('content').innerHTML = allData.user_response;
+        console.log(allData)
     }
     catch (error) {
         console.log("error", error);
