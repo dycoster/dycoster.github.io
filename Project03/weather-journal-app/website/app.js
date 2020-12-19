@@ -72,8 +72,8 @@ const updateUI = async () => {
         const allData = await request.json();
         const celsius = Math.floor(allData.temperature - 273.15);
 
-        document.getElementById('name').innerHTML = `Location: ${allData.name}`;
         document.getElementById('date').innerHTML = `Date: ${allData.date}`;
+        document.getElementById('name').innerHTML = `Location: ${allData.name}`;
         document.getElementById('temp').innerHTML = `Temperature: ${celsius}°C`;
         document.getElementById('content').innerHTML = `Feeling: ${allData.user_response}`;
         console.log(allData)

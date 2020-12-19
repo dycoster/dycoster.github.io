@@ -13,6 +13,7 @@ body{
     grid-template-areas:
     "header header"
     "column-left column-right"
+    "result result"
     "result result";
     height:100vh;
     background: linear-gradient(#83C9EE, white);
@@ -31,17 +32,20 @@ body{
 .entry {
     background: linear-gradient(#FFB759, #EB9E3B);
     grid-area: result;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-/*
-#entryHolder{
 
-}
+/* #entryHolder{
+
+} */
 
 #date{
-
+    font-style: italic;
 }
 
-#temp{
+/* #temp{
 
 }
 
@@ -55,8 +59,10 @@ body{
     align-items: center;
 }
 
-/* .title {
-} */
+.title {
+    margin-bottom: 2rem;
+    color: honeydew;
+}
 
 .zip {
     grid-area: column-left;
@@ -77,7 +83,7 @@ input{
     height: 60px;
     width: 240px;
     background:#83C9EE;
-    color:#e47c40;
+    color: #9E5D08;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
@@ -92,6 +98,7 @@ button{
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    cursor: pointer;
 }
 
 button:hover{
@@ -112,6 +119,7 @@ textarea{
     color: #9E5D08;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    border: none;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
