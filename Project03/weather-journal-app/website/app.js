@@ -19,11 +19,11 @@ function performAction(e) {
 getWeather(baseURL, apiKey)
 
 .then (function(data) {
-    postData('/add', {date: newDate, temp: data.main.temp, feeling: newFeeling})
+    postData('/addWeatherData', {date: newDate, temp: data.main.temp, user_response: newFeeling})
 })
-.then(
+.then(function() {
     updateUI()
-)
+})
 }
 
 // Fetch openweatherMap API
@@ -44,15 +44,13 @@ const getWeather = async (baseURL, apiKey) => {
 // Async POST request
 
 const postData = async (url = '', data = {})=> {
-    console.log(data);
-
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
     });
 
     try {
