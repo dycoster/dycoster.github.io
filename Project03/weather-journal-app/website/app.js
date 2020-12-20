@@ -17,7 +17,7 @@ function performAction(e) {
     const newFeeling = document.getElementById('feelings').value;
 
     const baseURL = `http://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=`
-    const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167';
+    const apiKey = 'f2e89ddc1b6bbdf69468c5b14dccd167&units=metric';
 
 getWeather(baseURL, apiKey)
 
@@ -71,11 +71,10 @@ const updateUI = async () => {
     const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
-        const celsius = Math.floor(allData.temperature - 273.15);
 
         document.getElementById('date').innerHTML = allData.date;
         document.getElementById('name').innerHTML = allData.name;
-        document.getElementById('temp').innerHTML = `${celsius}°C`;
+        document.getElementById('temp').innerHTML = `${allData.temperature}°C`;
         document.getElementById('content').innerHTML = `Feeling: ${allData.user_response}`;
         console.log(allData)
     }
