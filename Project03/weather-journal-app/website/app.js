@@ -22,7 +22,7 @@ function performAction(e) {
 getWeather(baseURL, apiKey)
 
 .then (function(data) {
-    postData('http://localhost:3030/add', {name: data.name, temperature: data.main.temp, date: newDate, user_response: newFeeling})
+    postData('http://localhost:3030/add', {name: data.name, temperature: data.main.temp, date: newDate, user_response: newFeeling, icon: data.weather[0].icon})
 })
 .then(function(newData) {
     updateUI()
@@ -71,11 +71,11 @@ const updateUI = async () => {
     const request = await fetch('http://localhost:3030/all');
     try{
         const allData = await request.json();
-
         document.getElementById('date').innerHTML = allData.date;
         document.getElementById('name').innerHTML = allData.name;
         document.getElementById('temp').innerHTML = `${allData.temperature}°C`;
         document.getElementById('content').innerHTML = `Feeling: ${allData.user_response}`;
+        document.getElementById('icon').setAttribute('src',`http://openweathermap.org/img/wn/${allData.icon}@2x.png`);
         console.log(allData)
     }
     catch (error) {

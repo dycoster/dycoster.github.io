@@ -45,6 +45,7 @@ function addData (req, res) {
     projectData.temperature = req.body.temperature;
     projectData.date = req.body.date;
     projectData.user_response = req.body.user_response;
+    projectData.icon = req.body.icon;
     res.send(projectData);
 }
 
