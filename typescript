@@ -1,0 +1,7 @@
+Script started on Sun Dec 27 12:22:45 2020
+[?1034hbash-3.2$ ls
+Project01		Project03		dart-sass		fend-webpack-sass
+Project02		Project04		fend-webpack-content	typescript
+bash-3.2$ .[K.bash_profile
+bash: .bash_profile: command not found
+bash-3.2$ 
