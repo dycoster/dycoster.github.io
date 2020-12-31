@@ -11,7 +11,7 @@ function handleSubmit(event) {
     postData('http://localhost:8081/add', {text: formText})
 
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.score_tag;
+        document.getElementById('results').innerHTML = 'res.score_tag';
     })
 }
 

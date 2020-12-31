@@ -54,14 +54,14 @@ app.get('/test', function (req, res) {
 
 // async POST request
 app.post('/add', async function(req, res) {
-    textInput = req.body.url;
+    textInput = req.body.name;
     console.log(`you entered: ${textInput}`);
     const apiURL = `${baseURL}key=${apiKey}&url=${textInput}&lang=en`
 
     const response = await fetch(apiURL)
-    const data = await response.json()
-    console.log(data)
-    res.send(data)
+    const apiData = await response.json()
+    console.log(apiData)
+    res.send(apiData)
 })
 
 // designates what port the app will listen to for incoming requests
