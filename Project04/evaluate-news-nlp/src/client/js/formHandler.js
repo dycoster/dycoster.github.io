@@ -8,10 +8,14 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    postData('http://localhost:8081/add', {text: formText})
+    postData('http://localhost:8081/add', {name: formText})
 
     .then(function(res) {
-        document.getElementById('results').innerHTML = 'res.score_tag';
+        document.getElementById('sentiment').innerHTML = `Sentiment: ${res.score_tag.toLowerCase()}`;
+        document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement.toLowerCase()}`;
+        document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity.toLowerCase()}`;
+        document.getElementById('confidence').innerHTML = `Accuracy: ${res.confidence}`;
+        document.getElementById('irony').innerHTML = `Irony: ${res.irony.toLowerCase()}`;
     })
 }
 
