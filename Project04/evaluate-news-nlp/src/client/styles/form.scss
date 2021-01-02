@@ -1,12 +1,27 @@
+$font-stack: 'Roboto Condensed', sans-serif;
+$font-size: 16px;
+$parent-bg: rgba($color: #F7F7F8, $alpha: 0.3);
+$bg:rgba($color: #EBF4FA, $alpha: 0.7);
+$color:rgba($color: #2D0170, $alpha: 1.0);
+$border: rgba($color: #DA304C, $alpha: 0.3);
+
+
+
 form {
-    border: 1px solid #545454;
+    border: 1px solid $border;
     border-radius: 3px;
     padding: 40px;
+    background-color:$bg;
 }
 
 input {
     padding: 5px 20px;
     width: 100%;
-    line-height: 16px;
+    line-height: 1rem;
     margin: 10px 0;
+}
+
+#submit {
+    color: $color;
+    font-family: $font-stack;
 }

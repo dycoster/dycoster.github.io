@@ -2,7 +2,12 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href= "https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600;700&display=swap">
+        <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="/src/client/Images/apple-icon.png">
+        <title>NLP</title>
         <!-- <link rel="stylesheet" href="/styles/resets.css">
         <link rel="stylesheet" href="/styles/base.css">
         <link rel="stylesheet" href="/styles/header.css">
@@ -13,23 +18,23 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+            <img src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdfnr8hLFcnuZlS3-sMtPb9739zaQbAxapbQ&usqp=CAU' class="logo" alt= "Logo of Natural Language Processing">
+            <div class="title">Natural Language Processing Application</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href='https://www.meaningcloud.com/' target="_blank">Documentation</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter Text Here">
+                    <input type="submit" id="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
-            <section>
-
-            <section>
+            </section>
+            <section id="results">
                 <strong>Form Results:</strong>
                 <div id="sentiment"></div>
                 <div id="agreement"></div>
@@ -40,7 +45,15 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <div class="footerContainer">
+                <div class="contactContainer">
+                    <h3>contact</h3>
+                    <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                    <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                    <a href="http://www.linkedIn.com"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <p id="copy">Copyright <i class="fa fa-copyright"></i> 2020</p>
+            </div>
         </footer>
         <!-- <script>
             // Check that service workers are supported

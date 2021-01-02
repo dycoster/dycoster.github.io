@@ -1,5 +1,38 @@
+
 footer {
-    background: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: #000000, $alpha: 0.2);
     color: #e7e7e7;
     height: 70px;
 }
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+
+    .contactContainer {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        i {
+            color: #e7e7e7;
+        }
+    }
+    #copy {
+        margin-top: 0;
+    }
+}
+
+
+
+
+
+

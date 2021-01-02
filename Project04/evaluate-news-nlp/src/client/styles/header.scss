@@ -1,5 +1,47 @@
+$font-stack: 'Roboto Condensed', sans-serif;
+$font-size: 16px;
+$parent-bg: rgba($color: #F7F7F8, $alpha: 0.3);
+$bg:rgba($color: #EBF4FA, $alpha: 0.5);
+$color:rgba($color: #2D0170, $alpha: 1.0);
+$border: rgba($color: #DA304C, $alpha: 0.3);
+
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    background-color:rgba($color: #F7F7F8, $alpha: 0.3);
+    color: $color;
+
+    img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    div {
+        align-self: center;
+        font-size: larger;
+    }
+
+    nav {
+        align-self: center;
+
+        ul{
+             li a{
+                color: $color;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 3px;
+                border: 1px solid $border;
+                background-color: $bg;
+            }
+            a:hover {
+                background-color:rgba($color: #D0EDF1, $alpha: 0.6);
+            }
+
+            a:active {
+                color:$bg;
+            }
+        }
+    }
 }
