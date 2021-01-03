@@ -21,7 +21,7 @@ function handleSubmit(event) {
         document.getElementById('irony').innerHTML = `Irony: ${res.irony.toLowerCase()}`;
     });
     } else {
-        document.getElementById('formResults').innerHTML = 'Invalid input, please try again';   
+        document.getElementById('formResults').innerHTML = 'Invalid input, please try again';
     }
 }
 
