@@ -9,19 +9,22 @@ $border: rgba($color: #DA304C, $alpha: 0.3);
 
 form {
     border: 1px solid $border;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 40px;
     background-color:$bg;
+
+    input {
+        padding: 5px 20px;
+        width: 100%;
+        line-height: 1rem;
+        margin: 10px 0;
+    }
+    
+    #submit {
+        color: $color;
+        font-family: $font-stack;
+    }
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 1rem;
-    margin: 10px 0;
-}
 
-#submit {
-    color: $color;
-    font-family: $font-stack;
-}
+

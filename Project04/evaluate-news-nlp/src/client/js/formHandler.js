@@ -11,7 +11,7 @@ function handleSubmit(event) {
     postData('http://localhost:8081/add', {name: formText})
 
     .then(function(res) {
-        document.getElementById('sentiment').innerHTML = `Sentiment: ${res.score_tag.toLowerCase()}`;
+        document.getElementById('sentiment').innerHTML = 'Sentiment: '+newScore(res.score_tag);
         document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement.toLowerCase()}`;
         document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity.toLowerCase()}`;
         document.getElementById('confidence').innerHTML = `Accuracy: ${res.confidence}`;
@@ -37,5 +37,29 @@ const postData = async (url = '', data = {})=> {
         console.log("error", error);
     }
 }
-export { handleSubmit }
 
+const newScore = (score) => {
+
+    switch(score) {
+        case 'P+':
+            return 'Strong Positive';
+            break;
+        case 'P':
+            return 'Positive';
+            break;
+        case 'NEU':
+            return'Neutral';
+            break;
+        case 'N':
+            return 'Negative';
+            break;
+        case 'N+':
+            return 'Strong Negative';
+            break;
+        case 'NONE':
+            return'Without Sentiment';
+            break;
+    }
+}
+export { handleSubmit }
+export { newScore }
