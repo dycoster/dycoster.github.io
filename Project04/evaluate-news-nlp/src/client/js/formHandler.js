@@ -5,8 +5,11 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
 
     Client.checkForName(formText)
-
     console.log("::: Form Submitted :::")
+
+    const regex = new RegExp('^[a-zA-Z\\s]+$');
+    if(regex.test(formText)){
+        document.getElementById('formResults').innerHTML = 'The results from the analyses:';
 
     postData('http://localhost:8081/add', {name: formText})
 
@@ -16,7 +19,10 @@ function handleSubmit(event) {
         document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity.toLowerCase()}`;
         document.getElementById('confidence').innerHTML = `Accuracy: ${res.confidence}`;
         document.getElementById('irony').innerHTML = `Irony: ${res.irony.toLowerCase()}`;
-    })
+    });
+    } else {
+        document.getElementById('formResults').innerHTML = 'Invalid input, please try again';   
+    }
 }
 
 const postData = async (url = '', data = {})=> {
