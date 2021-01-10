@@ -8,11 +8,11 @@ function handleSubmit(event) {
     console.log("::: Form Submitted :::")
 
     // check the input is valid
-    const regex = new RegExp('^[a-zA-Z\\s]+$');
+    const regex = new RegExp(/[.0-9]/gim);
     if(regex.test(formText)){
         document.getElementById('formResults').innerHTML = 'The results from the analyses:';
 
-    // post userInput serverside API
+    // post userInput to serverside
     postData('http://localhost:8081/add', {name: formText})
 
     // receive response from API to updateUI

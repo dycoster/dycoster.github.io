@@ -10,21 +10,16 @@ const app = express()
 
 const cors = require('cors')
 app.use(cors())
-
-// to use json
 app.use(bodyParser.json())
-// to use url encoded values
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-
 app.use(bodyParser.json())
 app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
-
 
 // async POST request
 app.post('/add', async function(req, res) {
