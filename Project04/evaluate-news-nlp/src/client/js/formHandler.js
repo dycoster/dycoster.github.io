@@ -4,20 +4,18 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
 
-    Client.checkForName(formText)
-    console.log("::: Form Submitted :::")
-
     // check the input is valid
-    const regex = new RegExp(/[.0-9]/gim);
+    const regex = new RegExp(/[A-Z.0-9]/gim);
     if(regex.test(formText)){
         document.getElementById('formResults').innerHTML = 'The results from the analyses:';
+        console.log("::: Form Submitted :::");
 
     // post userInput to serverside
-    postData('http://localhost:8081/add', {name: formText})
+    postData('http://localhost:8081/add', {text: formText})
 
     // receive response from API to updateUI
     .then(function(res) {
-        document.getElementById('sentiment').innerHTML = `Cloudmeaning considers this text to be: ${res.score_tag} & ${res.subjectivity.toLowerCase()}`;
+        document.getElementById('sentiment').innerHTML = `Cloudmeaning considers this text to be: ${res.subjectivity.toLowerCase()}`;
         document.getElementById('confidence').innerHTML = `Cloudmeaning is ${res.confidence}% confident in this analyses.`;
     });
     } else {

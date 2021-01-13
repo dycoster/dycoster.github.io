@@ -22,9 +22,9 @@ app.get('/', function (req, res) {
 })
 
 // async POST request
-app.post('/add', async function(req, res) {
-    console.log(req.body.name)
-    const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&txt=${req.body.name}&lang=auto`)
+app.post('/add', async (req, res)=> {
+    console.log(req.body.text)
+    const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&txt=${req.body.text}&lang=auto`)
 
     try {
         const apiData = await response.json()
