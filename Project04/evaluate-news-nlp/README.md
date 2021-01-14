@@ -2,7 +2,7 @@
 
 The 4th project in the Udacity Front-end Developer Nanodegree program.
 
-This project requires to build a web tool that allows users to run Natural Language Processing (NLP) on any text. The project is developed using Webpack and uses de following build tools.
+This project requires to build a web tool that allows users to run Natural Language Processing (NLP) on any text. The project is developed using Webpack and the student adds to his experience building with the following tools:
 
 * HTML
 * SCSS
