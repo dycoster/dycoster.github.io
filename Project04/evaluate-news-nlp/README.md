@@ -15,7 +15,7 @@ This project requires to build a web tool that allows users to run Natural Langu
 
 ## Installation
 
-# 1 Getting Started
+### 1 Getting Started
 
 Make sure Node and npm are installed from the terminal.
 
@@ -36,7 +36,7 @@ npm i -D html-webpack-plugin
 npm i -D mini-css-extract-plugin
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
-# 2 Setting up the API
+### 2 Setting up the API
 
 Sign up for the sentiment analyses API key at meaningcloud.com
 
@@ -49,9 +49,10 @@ Create a new .env file in the root of your project.
 Fill the .env file with your API keys like this:
 
 API_ID=**************************
+
 API_KEY=**************************
 
-# 3 Setup service workers for offline functionality
+### 3 Setup service workers for offline functionality
 
 Require the plugin, by appending the new plugin statement in your webpack.prod.js file.
 
@@ -64,13 +65,16 @@ Instantiate the new plugin in the plugin list.
     ]
 
 use npm to install the plugin:
+
 npm install workbox-webpack-plugin --save-dev
 
-# 4 Run the app
+### 4 Run the app
 npm run build-prod : builds project
+
 npm start : Run project
 
 The app opens on localhost 8080.
+
 The server listens on port 8081
 
 
