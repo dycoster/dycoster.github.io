@@ -1,5 +1,7 @@
+// Havent been able to get this to work as described in https://sass-lang.com/guide
+// @use 'base';
+
 $font-stack: 'Roboto Condensed', sans-serif;
-$font-size: 16px;
 $parent-bg: rgba($color: #F7F7F8, $alpha: 0.3);
 $bg:rgba($color: #EBF4FA, $alpha: 0.7);
 $color:rgba($color: #2D0170, $alpha: 1.0);
@@ -11,7 +13,7 @@ form {
     border: 1px solid $border;
     border-radius: 6px;
     padding: 40px;
-    background-color:$bg;
+    background-color: $bg;
 
     input {
         padding: 5px 20px;
@@ -19,7 +21,7 @@ form {
         line-height: 1rem;
         margin: 10px 0;
     }
-    
+
     #submit {
         color: $color;
         font-family: $font-stack;

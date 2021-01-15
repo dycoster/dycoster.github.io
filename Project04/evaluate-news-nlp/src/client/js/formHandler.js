@@ -6,14 +6,14 @@ function handleSubmit(event) {
 
     // from https://regexr.com/
     const regex = new RegExp(/[A-Z.0-9]/gim);
-    
+
     // inspiration from https://knowledge.udacity.com/questions/386759
     if(regex.test(formText)){
             document.getElementById('formResults').innerHTML = 'The results from the analyses:';
 
             console.log("::: Form Submitted :::");
 
-        // post userInput to serverside
+        // post userInput to serverside, these threads has been helpfull to me https://knowledge.udacity.com/questions/314461 and https://knowledge.udacity.com/questions/127378
             fetch ('http://localhost:8081/add', {
                 method: 'POST',
                 credentials: 'same-origin',

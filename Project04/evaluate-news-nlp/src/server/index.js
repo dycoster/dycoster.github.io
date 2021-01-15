@@ -22,10 +22,10 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-// async POST request
+// async POST request inspriration from https://knowledge.udacity.com/questions/287028
 app.post('/add', async (req, res)=> {
     console.log(req.body)
-    const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&txt=${req.body}&lang=auto`)
+    const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json&txt=${req.body}&lang=auto`)
 
     try {
         const apiData = await response.json()
