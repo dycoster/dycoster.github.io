@@ -1,22 +1,31 @@
+// API
 const dotenv = require('dotenv');
 dotenv.config();
-
-const path = require('path')
-const express = require('express')
-const bodyParser = require('body-parser')
-const fetch = require('node-fetch')
-const cors = require('cors')
 const apiKey = process.env.API_KEY
 
-const app = express()
-app.use(cors())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
-app.use(bodyParser.json())
-app.use(express.static('dist'))
+// allows to work with file paths and directories (https://www.w3schools.com/nodejs/ref_path.asp)
+const path = require('path')
 
+// require express to run server and routes similar to Project 3
+const express = require('express')
+const app = express()
+
+// middleware
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({
+    extended: true
+  }))
+app.use(bodyParser.json())
+
+//   Cors for cross origin allowance
+const cors = require('cors')
+app.use(cors())
+
+// to allow making fetch requests in server
+const fetch = require('node-fetch')
+
+// Initialize the main project folder
+app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
