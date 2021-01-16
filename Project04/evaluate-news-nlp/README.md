@@ -79,7 +79,7 @@ The server listens on port 8081
 
 
 ## Known issues
-- There is a compatibility issue with the terser plugin. The plugin needs to be downgrade in the package.json file to
+There is a compatibility issue with the terser plugin. The plugin needs to be downgrade in the package.json file to
 
  > "terser-webpack-plugin": "^4.2.3"
 
@@ -89,4 +89,4 @@ The server listens on port 8081
   - npm run build-prod
 
 
-- Currently the production side builds but the app has no functionality
+Currently the production side builds but the app has no functionality
