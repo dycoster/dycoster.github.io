@@ -29,12 +29,12 @@ Fork this repo and clone to begin your project setup and install everything:
 
 Install the following loaders and plugins
 
-npm i -D @babel/core @babel/preset-env babel-loader
-npm i -D style-loader node-sass css-loader sass-loader
-npm i -D clean-webpack-plugin
-npm i -D html-webpack-plugin
-npm i -D mini-css-extract-plugin
-npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+- npm i -D @babel/core @babel/preset-env babel-loader
+- npm i -D style-loader node-sass css-loader sass-loader
+- npm i -D clean-webpack-plugin
+- npm i -D html-webpack-plugin
+- npm i -D mini-css-extract-plugin
+- npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
 ### 2 Setting up the API
 
@@ -79,3 +79,14 @@ The server listens on port 8081
 
 
 ## Known issues
+- There is a compatibility issue with the terser plugin. The plugin needs to be downgrade in the package.json file to
+
+ > "terser-webpack-plugin": "^4.2.3"
+
+ Then run
+
+  - npm i
+  - npm run build-prod
+
+
+- Currently the production side builds but the app has no functionality
